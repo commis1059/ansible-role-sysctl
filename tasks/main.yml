@@ -1,0 +1,14 @@
+---
+- name: Set net.core.somaxconn
+  sysctl:
+    name: net.core.somaxconn
+    value: "{{ sysctl.net.core.somaxconn }}"
+    state: present
+  become: yes
+
+- name: Set vm.swappiness
+  sysctl:
+    name: vm.swappiness
+    value: "{{ sysctl.vm.swappiness }}"
+    state: present
+  become: yes
